@@ -12,3 +12,20 @@ dev_dependencies:
     sdk: flutter
 flutter:
   uses-material-design: true
+  fonts:
+  - family: Roboto  
+    fonts:
+    - asset: assets/fonts/Roboto-Black.ttf
+    - asset: assets/fonts/Roboto-Bold.ttf
+      weight: 700
+  - family: Lato
+    fonts:
+    - asset: assets/fonts/Lato-Black.ttf
+    - asset: assets/fonts/Lato-Bold.ttf
+      weight: 700
+  - family: Blackjack
+    fonts:
+    - asset: assets/fonts/blackjack.otf
+  - family: Seasern
+    fonts:
+    - asset: assets/fonts/SEASRN__.ttf

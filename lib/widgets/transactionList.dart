@@ -17,14 +17,13 @@ class TransactionList extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.purple, width: 3)),
+                      border: Border.all(
+                          color: Theme.of(context).primaryColorLight,
+                          width: 3)),
                   child: Card(
                     child: Text(
                       '\$${transactions[index].amount}',
-                      style: TextStyle(
-                          color: Colors.purple,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.title,
                     ),
                   ),
                   padding: EdgeInsets.all(8),
