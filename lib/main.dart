@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'models/transaction.dart';
 import 'widgets/NewTransaction.dart';
+import 'widgets/chart.dart';
 import 'widgets/transactionList.dart';
 
 void main() {
@@ -17,12 +18,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.red,
           accentColor: Colors.black,
-          textTheme: ThemeData.light()
-              .textTheme
-              .copyWith(title: TextStyle(fontFamily: 'Roboto', fontSize: 20)),
+          textTheme: ThemeData.light().textTheme.copyWith(
+              headline6: TextStyle(fontFamily: 'Lato', fontSize: 20),
+              headline1: TextStyle(
+                  fontFamily: 'Raleway', fontSize: 14, color: Colors.grey),
+              headline2: TextStyle(
+                  fontFamily: 'Lato',
+                  fontSize: 17,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold)),
           appBarTheme: AppBarTheme(
               textTheme: ThemeData.light().textTheme.copyWith(
-                  title: TextStyle(fontFamily: 'Roboto', fontSize: 20))),
+                  headline6: TextStyle(fontFamily: 'Raleway', fontSize: 20))),
           fontFamily: 'Roboto'),
     );
   }
@@ -34,12 +41,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Transaction> transactions = [
-    Transaction(
-        amount: 69.89, title: 'OnePlus Buds', id: '1', date: DateTime.now()),
-    Transaction(
-        amount: 299, title: 'Apple Watch', id: '2', date: DateTime.now())
-  ];
+  final List<Transaction> transactions = [];
 
   void addTransaction(Transaction transaction) {
     setState(() {
@@ -74,10 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Container(
               width: double.infinity,
-              child: Card(
-                child: Text('Chart!!'),
-                elevation: 5,
-                color: Theme.of(context).primaryColorLight,
+              child: Chart(
+                transactions: transactions,
               ),
             ),
             TransactionList(transactions)
