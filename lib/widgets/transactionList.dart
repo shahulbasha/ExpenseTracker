@@ -10,7 +10,6 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 425,
         child: transactions.isEmpty
             ? Column(
                 children: [
@@ -19,7 +18,7 @@ class TransactionList extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline2,
                   ),
                   SizedBox(
-                    height: 15,
+                    height: MediaQuery.of(context).size.height * 0.05,
                   ),
                   Container(
                     child: Image.asset(
